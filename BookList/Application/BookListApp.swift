@@ -11,7 +11,7 @@ import SwiftUI
 struct BookListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView(viewModel: ViewModel(sessionManager: SessionManager.shared))
         }
     }
 }
