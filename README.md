@@ -1,4 +1,4 @@
-###Checklist
+### Checklist
 - On Main with vertical scroll show all lists  :white_check_mark:
 - Each list should show up to 5 books in a horizontal scroll :white_check_mark:
 - Tapping all shows full list :white_check_mark:
