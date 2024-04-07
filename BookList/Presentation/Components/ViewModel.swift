@@ -16,7 +16,6 @@ class ViewModel: ObservableObject {
     @Published var error: NetworkError? = nil
     @Published var selectedBook: Book? = nil
     @Published var showAlert = false
-    private var iterratedBook: Book? = nil
     
     init(sessionManager: SessionManager) {
         self.sessionManager = sessionManager
@@ -54,16 +53,12 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func fetchBookDetails(bookId: Int, forAuthors: Bool = false) async {
+    func fetchBookDetails(bookId: Int) async {
         let urlString = APIEndpoints.bookDetails(forBookId: bookId)
         await sessionManager.fetchDecodableData(from: urlString) { (result: Result<Book, Error>) in
             switch result {
             case .success(let bookDetail):
-                if forAuthors {
-                    self.iterratedBook = bookDetail
-                } else {
-                    self.selectedBook = bookDetail
-                }
+                self.selectedBook = bookDetail
             case .failure(let error):
                 self.error = error as? NetworkError
                 self.showAlert = true
@@ -73,15 +68,20 @@ class ViewModel: ObservableObject {
     
     @MainActor
     func fetchBookDetailsAndStoreInBookAuthors() async {
-        var bookAuthors = [Int: String]()
-        
         guard let books = books else { return }
         
+        var bookAuthors = [Int: String]()
+        
         for book in books {
-            await fetchBookDetails(bookId: book.id, forAuthors: true)
-            
-            if let currentBookDetail = selectedBook {
-                bookAuthors[currentBookDetail.id] = currentBookDetail.author
+            let urlString = APIEndpoints.bookDetails(forBookId: book.id)
+            await sessionManager.fetchDecodableData(from: urlString) { (result: Result<Book, Error>) in
+                switch result {
+                case .success(let bookDetail):
+                    bookAuthors[bookDetail.id] = bookDetail.author
+                case .failure(let error):
+                    self.error = error as? NetworkError
+                    self.showAlert = true
+                }
             }
         }
         

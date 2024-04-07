@@ -47,4 +47,24 @@ final class Tests: XCTestCase {
             }
         }
     }
+    
+    func testDecodingError() async throws {
+        let mockSession = MockURLSession()
+        let invalidJSON = "{\"invalid\":\"data\"}".data(using: .utf8)!
+        mockSession.mockData = invalidJSON
+        mockSession.mockResponse = HTTPURLResponse(url: URL(string: "https://nhk.moe")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        let sessionManager = SessionManager(session: mockSession)
+        
+        await sessionManager.fetchDecodableData(from: "https://nhk.moe") { (result: Result<Book, Error>) in
+            switch result {
+            case .failure(let error):
+                    XCTAssertNotNil(error)
+                XCTAssertEqual(error.localizedDescription, "A network error occurred: Failed to decode the response: The data couldn’t be read because it is missing.")
+            default:
+                XCTFail("Expected failure due to decoding error")
+            }
+        }
+    }
+
 }

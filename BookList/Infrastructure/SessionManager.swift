@@ -53,8 +53,10 @@ class SessionManager {
             do {
                 let decodedData = try decoder.decode(T.self, from: data)
                 return decodedData
+            } catch let decodingError as DecodingError {
+                throw NetworkError.decodingError(decodingError)
             } catch {
-                throw NetworkError.decodingError(error)
+                throw NetworkError.generalNetworkError(error)
             }
             
         } catch {
