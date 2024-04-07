@@ -43,6 +43,9 @@ struct BookDetailsView: View {
             .refreshable {
                 viewModel.leadData()
             }
+            .onDisappear {
+                viewModel.selectedBook = nil
+            }
             .navigationTitle(Strings.bookDetailsTitle)
         }
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		618A3FB02BC2A81D00DC2375 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDBB7A2BC11BBC00AC0851 /* SessionManager.swift */; };
+		618A3FB12BC2A84600DC2375 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDBB742BC11B4900AC0851 /* Error.swift */; };
 		CDBD04C72BC29DAF00B7C40F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDBBBB92BC10FD900F58F43 /* Tests.swift */; };
 		CDBD04CA2BC29F9900B7C40F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD04C92BC29F9900B7C40F /* MockURLSession.swift */; };
 		CDBD04CB2BC29F9900B7C40F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD04C92BC29F9900B7C40F /* MockURLSession.swift */; };
@@ -341,8 +343,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618A3FB12BC2A84600DC2375 /* Error.swift in Sources */,
 				CDBD04CB2BC29F9900B7C40F /* MockURLSession.swift in Sources */,
 				CDBD04C72BC29DAF00B7C40F /* Tests.swift in Sources */,
+				618A3FB02BC2A81D00DC2375 /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +399,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SH7598WJ8A;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobbert.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,7 +418,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SH7598WJ8A;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bobbert.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

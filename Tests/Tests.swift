@@ -15,22 +15,18 @@ final class Tests: XCTestCase {
         mockSession.mockData = try JSONEncoder().encode(book)
         mockSession.mockResponse = HTTPURLResponse(url: URL(string: "https://nhk.moe")!, statusCode: 200, httpVersion: nil, headerFields: nil)
         
-        let sessionManager = SessionManager(session: mockSession as! URLSessionProtocol)
-        
-        var fetchedBook: Book?
+        let sessionManager = SessionManager(session: mockSession)
         
         await sessionManager.fetchDecodableData(from: "https://nhk.moe") { (result: Result<Book, Error>) in
             switch result {
-            case .success(let book):
-                fetchedBook = book
+            case .success(let result):
+                XCTAssertNotNil(result)
+                XCTAssertEqual(result.id, book.id)
+                XCTAssertEqual(result.title, book.title)
+                XCTAssertEqual(result.author, book.author)
             case .failure(let error):
                 XCTAssertNotNil(error)
             }
         }
-        
-        XCTAssertNotNil(fetchedBook)
-        XCTAssertEqual(fetchedBook?.id, book.id)
-        XCTAssertEqual(fetchedBook?.title, book.title)
-        XCTAssertEqual(fetchedBook?.author, book.author)
     }
 }
