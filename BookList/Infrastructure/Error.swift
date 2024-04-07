@@ -23,9 +23,9 @@ extension NetworkError: LocalizedError {
         case .networkRequestFailed(let statusCode):
             return "Network request failed with status code \(statusCode)."
         case .decodingError(let error):
-            return "Failed to decode the response: \(error.localizedDescription)."
+            return "Failed to decode the response: \(error.localizedDescription)"
         case .generalNetworkError(let error):
-            return "A network error occurred: \(error.localizedDescription)."
+            return "A network error occurred: \(error.localizedDescription)"
         case .unknownError:
             return "An unknown error occurred."
         }
