@@ -23,8 +23,4 @@ struct Book: Codable, Identifiable {
         case publicationDate = "publication_date"
         case author, title, img, description
     }
-    
-    var image: UIImage? {
-        return ImageCacheManager.shared.getImage(for: img)
-    }
 }
