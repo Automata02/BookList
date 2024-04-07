@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		618A3FB02BC2A81D00DC2375 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDBB7A2BC11BBC00AC0851 /* SessionManager.swift */; };
 		618A3FB12BC2A84600DC2375 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDBB742BC11B4900AC0851 /* Error.swift */; };
+		618A3FB32BC2A9AD00DC2375 /* MockBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A3FB22BC2A9AD00DC2375 /* MockBook.swift */; };
+		618A3FB42BC2A9E200DC2375 /* MockBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618A3FB22BC2A9AD00DC2375 /* MockBook.swift */; };
+		618A3FB52BC2AA2100DC2375 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDBB8B2BC1209700AC0851 /* Book.swift */; };
+		618A3FB62BC2AA4500DC2375 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFDBBBC2BC1BDBD00AC0851 /* ImageCacheManager.swift */; };
 		CDBD04C72BC29DAF00B7C40F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDBBBB92BC10FD900F58F43 /* Tests.swift */; };
 		CDBD04CA2BC29F9900B7C40F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD04C92BC29F9900B7C40F /* MockURLSession.swift */; };
 		CDBD04CB2BC29F9900B7C40F /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBD04C92BC29F9900B7C40F /* MockURLSession.swift */; };
@@ -49,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		618A3FB22BC2A9AD00DC2375 /* MockBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBook.swift; sourceTree = "<group>"; };
 		CDBD04BD2BC29D9A00B7C40F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBD04C92BC29F9900B7C40F /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		CDDBBBA52BC10FD800F58F43 /* BookList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +107,7 @@
 			children = (
 				CDDBBBB92BC10FD900F58F43 /* Tests.swift */,
 				CDBD04C92BC29F9900B7C40F /* MockURLSession.swift */,
+				618A3FB22BC2A9AD00DC2375 /* MockBook.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -344,8 +350,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				618A3FB12BC2A84600DC2375 /* Error.swift in Sources */,
+				618A3FB62BC2AA4500DC2375 /* ImageCacheManager.swift in Sources */,
 				CDBD04CB2BC29F9900B7C40F /* MockURLSession.swift in Sources */,
+				618A3FB52BC2AA2100DC2375 /* Book.swift in Sources */,
 				CDBD04C72BC29DAF00B7C40F /* Tests.swift in Sources */,
+				618A3FB32BC2A9AD00DC2375 /* MockBook.swift in Sources */,
 				618A3FB02BC2A81D00DC2375 /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +377,7 @@
 				CDFDBB752BC11B4900AC0851 /* Error.swift in Sources */,
 				CDFDBBA82BC15FBF00AC0851 /* BookDetailsView.swift in Sources */,
 				CDFDBBC12BC1C77300AC0851 /* ImageLoader.swift in Sources */,
+				618A3FB42BC2A9E200DC2375 /* MockBook.swift in Sources */,
 				CDFDBB902BC1222800AC0851 /* ViewModel.swift in Sources */,
 				CDFDBB8C2BC1209700AC0851 /* Book.swift in Sources */,
 				CDFDBB7B2BC11BBC00AC0851 /* SessionManager.swift in Sources */,

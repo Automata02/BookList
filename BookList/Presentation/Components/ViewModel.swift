@@ -26,7 +26,7 @@ class ViewModel: ObservableObject {
         Task {
             await fetchLists()
             await fetchBooks()
-//            await fetchBookDetailsAndStoreInBookAuthors()
+            await fetchBookDetailsAndStoreInBookAuthors()
         }
     }
     
